@@ -130,9 +130,3 @@ npx expo lint
 - It is designed to be mobile-first while also working in a browser.
 - The app is a simple demonstration of state-driven UI with React Native components.
 - It is a good starting point for a more advanced to-do or shopping list app.
-
-## Website Link
-
-Add your live website link here:
-
-https://your-website-link.com
