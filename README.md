@@ -86,7 +86,7 @@ Navigation includes:
 - Home tab for the grocery list
 - Explore tab for additional app content
 
-The overall app layout is wrapped in [src/app/_layout.tsx](src/app/_layout.tsx), which sets up the theme provider and the app shell.
+The overall app layout is wrapped in [src/app/\_layout.tsx](src/app/_layout.tsx), which sets up the theme provider and the app shell.
 
 ## Installation
 
