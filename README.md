@@ -1,56 +1,138 @@
-# Welcome to your Expo app 👋
+# Todo-List App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project is a mobile-first grocery and task management app built with Expo and React Native. It allows users to add items to a shopping list, view them in a clean interface, and remove items when they are no longer needed.
 
-## Get started
+The app is structured as a modern Expo Router project and supports mobile and web development in a single codebase.
 
-1. Install dependencies
+## Overview
 
-   ```bash
-   npm install
-   ```
+This app was created to demonstrate a simple but functional productivity tool. It focuses on a minimal and user-friendly experience for managing everyday grocery items. The home screen includes:
 
-2. Start the app
+- An input field to add new items
+- A button to submit the item to the list
+- A list view showing all items
+- Delete buttons for each item
+- A clean, responsive layout for mobile screens
 
-   ```bash
-   npx expo start
-   ```
+## Features
 
-In the output, you'll find options to open the app in a
+- Add grocery or task items to a list
+- Prevent empty input entries
+- Remove items from the list
+- Responsive design for small screens and web viewing
+- Light and dark theme support via Expo styling
+- Tab-based navigation using Expo Router
+- Cross-platform compatibility with Expo
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Tech Stack
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+This project uses:
 
-## Get a fresh project
+- React Native
+- Expo
+- TypeScript
+- Expo Router
+- React Native Safe Area Context
+- Expo Vector Icons
+- React Native Web support
 
-When you're ready, run:
+## Project Structure
 
-```bash
-npm run reset-project
+```text
+Todo-List/
+├── app.json                  # Expo app configuration
+├── package.json              # Scripts and dependencies
+├── README.md                 # Project documentation
+├── tsconfig.json             # TypeScript configuration
+├── src/
+│   ├── app/
+│   │   ├── _layout.tsx       # App layout and theme setup
+│   │   ├── index.tsx         # Main grocery list screen
+│   │   └── explore.tsx       # Explore screen/tab page
+│   ├── components/
+│   │   ├── app-tabs.tsx      # Bottom tab navigation
+│   │   ├── animated-icon.tsx # Animated splash icon logic
+│   │   └── ...
+│   ├── constants/
+│   │   └── theme.ts          # Theme colors and spacing values
+│   ├── global.css            # Global CSS for web styling
+│   └── hooks/                # Reusable hooks
+├── assets/                   # Images and app assets
+├── scripts/
+│   └── reset-project.js      # Project reset helper
+└── LICENSE
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Main Application Logic
 
-### Other setup steps
+The core behavior is centered in the main screen at [src/app/index.tsx](src/app/index.tsx).
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+That screen includes:
 
-## Learn more
+- A state variable for the current item input
+- A state array for the grocery list
+- An add function that validates and inserts items
+- A delete function that removes an item by index
+- A FlatList component to render the item list
 
-To learn more about developing your project with Expo, look at the following resources:
+The layout is styled in the same file using React Native StyleSheet objects, with shared colors and spacing coming from [src/constants/theme.ts](src/constants/theme.ts).
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## App Navigation
 
-## Join the community
+The application uses Expo Router and includes tab-based navigation via [src/components/app-tabs.tsx](src/components/app-tabs.tsx).
 
-Join our community of developers creating universal apps.
+Navigation includes:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Home tab for the grocery list
+- Explore tab for additional app content
+
+The overall app layout is wrapped in [src/app/_layout.tsx](src/app/_layout.tsx), which sets up the theme provider and the app shell.
+
+## Installation
+
+1. Open the project folder in your terminal.
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+## Run the Project
+
+Start the Expo development server:
+
+```bash
+npx expo start
+```
+
+You can then open the app in:
+
+- iOS simulator
+- Android emulator
+- Expo Go
+- Web browser using the web option
+
+## Useful Scripts
+
+These scripts are defined in [package.json](package.json):
+
+```bash
+npm start
+npm run web
+npm run android
+npm run ios
+npx expo lint
+```
+
+## Notes
+
+- The project uses the Expo Router entry point defined in the package configuration.
+- It is designed to be mobile-first while also working in a browser.
+- The app is a simple demonstration of state-driven UI with React Native components.
+- It is a good starting point for a more advanced to-do or shopping list app.
+
+## Website Link
+
+Add your live website link here:
+
+https://your-website-link.com
